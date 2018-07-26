@@ -1,7 +1,7 @@
 
 $(function(){
     let i=0;
-    let size=5;
+    let size=$('.slider-image').length;
     //     //小圆点开始
     $(".dot").click(function(){
         $(this).addClass("on").siblings().removeClass("on");
@@ -38,13 +38,9 @@ $(function(){
             $('.slider-list').css({left:0});
             i=1;
         }
-        // if(i=-1){
-        //     $(".main").css({left:-3*600});
-        //     i=3;
-        // }
         if(i==-1){
-            $(".slider-list").css({left:-4*600});
-            i=3;
+            $(".slider-list").css({left:-(size-1)*600});
+            i=size-2;
         }
         $(".slider-list").stop().animate({ left: -i * 600 }, 600);
         // i++;
